@@ -1,5 +1,13 @@
 <h2>Register</h2>
 
+{{#if errors}}
+  {{#each errors}}
+    <div class="alert alert-danger">
+      {{msg}} <a href="#close">Close</a>
+    </div>
+  {{/each}}
+{{/if}}
+
 <form class="form" action="/users/register" method="post">
   <div class="form-group">
     <label for="name">Name</label>
@@ -11,7 +19,7 @@
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" name="email" id="email" class="form-control">
+    <input type="text" name="email" id="email" class="form-control">
   </div>
   <div class="form-group">
     <label for="password">Password</label>
